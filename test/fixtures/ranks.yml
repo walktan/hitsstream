@@ -2,12 +2,12 @@
 
 one:
   rank: 1
-  mst_date_id: 1
-  mst_genre_id: 1
-  mst_music_id: 1
+  mst_date_id: 
+  mst_genre_id: 
+  mst_music_id: 
 
 two:
   rank: 1
-  mst_date_id: 1
-  mst_genre_id: 1
-  mst_music_id: 1
+  mst_date_id: 
+  mst_genre_id: 
+  mst_music_id: 
