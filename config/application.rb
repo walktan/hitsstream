@@ -22,5 +22,10 @@ module Hitsstream
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Add_Sta_20160625
+    config.autoload_paths += Dir["#{config.root}/lib"]
+    # Add_End_20160625
+
   end
 end
