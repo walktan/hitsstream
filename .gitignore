@@ -14,4 +14,4 @@
 
 /.DS_Store
 
-/config/secrets.yml
+config/secrets.yml
