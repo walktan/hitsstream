@@ -3,9 +3,9 @@
 one:
   title: MyString
   artist: MyString
-  url: MyText
+  youtube_url: MyText
 
 two:
   title: MyString
   artist: MyString
-  url: MyText
+  youtube_url: MyText

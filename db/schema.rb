@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619115246) do
+ActiveRecord::Schema.define(version: 20160626110912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160619115246) do
 
   create_table "mst_genres", force: :cascade do |t|
     t.string   "name"
+    t.string   "itunes_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,9 +32,9 @@ ActiveRecord::Schema.define(version: 20160619115246) do
   create_table "mst_musics", force: :cascade do |t|
     t.string   "title"
     t.string   "artist"
-    t.text     "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "youtube_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "ranks", force: :cascade do |t|
@@ -50,9 +51,6 @@ ActiveRecord::Schema.define(version: 20160619115246) do
   add_index "ranks", ["mst_music_id"], name: "index_ranks_on_mst_music_id", using: :btree
 
   add_foreign_key "ranks", "mst_dates"
-  add_foreign_key "ranks", "mst_dates", name: "ranks_mst_date_id_fk", on_update: :cascade, on_delete: :cascade
   add_foreign_key "ranks", "mst_genres"
-  add_foreign_key "ranks", "mst_genres", name: "ranks_mst_genre_id_fk", on_update: :cascade, on_delete: :cascade
   add_foreign_key "ranks", "mst_musics"
-  add_foreign_key "ranks", "mst_musics", name: "ranks_mst_music_id_fk", on_update: :cascade, on_delete: :cascade
 end
