@@ -1,7 +1,40 @@
-<h1>Ranks</h1>
+<%- model_view_ranking = ViewRanking -%>
+<%- model_mst_date = MstDate -%>
+<div class="page-header">
+  <h1>Hits Stream</h1>
+</div>
 
-<ul>
-	<% @ranks.each do |rank| %>
-	<li> <%= rank.id %> </li>
-	<% end %>
-</ul>
+<%= form_for @mst_dates do |f| %>
+  <%= f.label :TARGET_DATE %>
+  <%= f.collection_select :id, MstDate.all.order("id DESC"), :this_date, :this_date %>
+<% end %>
+
+<%= form_for @mst_genres do |f| %>
+  <%= f.label :GENRE %>
+  <%= f.collection_select :id, MstGenre.all.order("id"), :name, :name %>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_view_ranking.human_attribute_name(:TARGET_DATE) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:GENRE_NAME) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:RANKING) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:ARTIST) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:TITLE) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:YOUTUBE_URL) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @view_rankings.each do |rank| %>
+      <tr>
+        <td><%= rank.target_date %></td>
+        <td><%= rank.genre_name %></td>
+        <td><%= rank.ranking %></td>
+        <td><%= rank.artist %></td>
+        <td><%= rank.title %></td>
+        <td><%= rank.youtube_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

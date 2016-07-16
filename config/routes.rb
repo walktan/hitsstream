@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
     resources :ranks
+    resources :mst_dates
+    resources :mst_genres
 
     root 'ranks#index'
 
