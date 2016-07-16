@@ -37,8 +37,8 @@ class Tasks::UpdateItunesRanking
 				rank.mst_date_id = MstDate.maximum('id')
 				rank.mst_genre_id = value[1]
 				begin
-					result = JSON.parse(MstMusic.where(artist: artist, title: title).to_json)
-					rank.mst_music_id = result[0]['id']
+					result = MstMusic.where(artist: artist, title: title).pluck(:id)
+					rank.mst_music_id = result[0]
 				rescue NoMethodError
 					rank.mst_music_id = nil
 				end
