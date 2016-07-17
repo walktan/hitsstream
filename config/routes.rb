@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :mst_dates
     resources :mst_genres
 
+    post '/ranks/result'
     root 'ranks#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
