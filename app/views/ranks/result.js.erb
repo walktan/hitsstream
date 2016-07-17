@@ -1,0 +1,3 @@
+$(function(){
+	$('#search_result').html("<%= j(render(:partial => 'list', :locals => {:contents => @view_rankings})) %>")
+});
