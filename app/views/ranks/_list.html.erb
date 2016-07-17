@@ -3,12 +3,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_view_ranking.human_attribute_name(:TARGET_DATE) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:GENRE_NAME) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:DATE) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:GENRE) %></th>
       <th><%= model_view_ranking.human_attribute_name(:RANKING) %></th>
       <th><%= model_view_ranking.human_attribute_name(:ARTIST) %></th>
       <th><%= model_view_ranking.human_attribute_name(:TITLE) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:YOUTUBE_URL) %></th>
+      <th><%= model_view_ranking.human_attribute_name(:MV) %></th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +19,7 @@
         <td><%= rank.ranking %></td>
         <td><%= rank.artist %></td>
         <td><%= rank.title %></td>
-        <td><%= rank.youtube_url %></td>
+        <td><iframe width="560" height="315" src=<%= "https://www.youtube.com/embed/" + rank.youtube_url %> frameborder="0" allowfullscreen></iframe></td>
       </tr>
     <% end %>
   </tbody>
