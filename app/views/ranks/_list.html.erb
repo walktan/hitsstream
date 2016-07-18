@@ -22,6 +22,10 @@
         <td><%= rank.artist %></td>
         <td><%= rank.title %></td>
         <td>
+          <% if rank.youtube_url == nil then %>
+            <p>VideoID未設定</p>
+            <% rank.youtube_url = 'WMR0NjbsMf4' %>
+          <% end%>
           <% if running_ranking == rank.ranking then %> 
           <div id="player1" data-video-id="<%= rank.youtube_url %>" data-now-ranking="<%= running_ranking %>">></div>
           <% else %>
