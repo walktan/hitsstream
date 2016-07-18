@@ -14,6 +14,9 @@
 <%= submit_tag("Select") %>
 <% end %>
 
+<p id='play_button'>PLAY</p>
+<p id='pause_button'>PAUSE</p>
+
 <div id='search_result'>
 <%= render partial: 'list', locals: {contents: @view_rankings, running_ranking: @running_ranking} %>
 </div>
