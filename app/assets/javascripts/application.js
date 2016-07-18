@@ -49,20 +49,35 @@ function onPlayerReady(event) {
 	$('#pause_button').click(function(){
 		ytplayer.pauseVideo();
 	});
+	$('#next_button').click(function(){
+		$.ajax({
+			url: '/ranks/next',
+			type: 'POST',
+			data: {this_date: $('#target_date').data("target-date"),
+		           name: $('#genre_name').data("genre-name"),
+		           now_ranking: $('#player1').data("now-ranking")}
+		});
+	});
+	$('#prev_button').click(function(){
+		$.ajax({
+			url: '/ranks/prev',
+			type: 'POST',
+			data: {this_date: $('#target_date').data("target-date"),
+		           name: $('#genre_name').data("genre-name"),
+		           now_ranking: $('#player1').data("now-ranking")}
+		});
+	});
 };
 
 function onPlayerStateChange(event) {
 	var state = ytplayer.getPlayerState();
-	var now_ranking = $('#player1').data("now-ranking");
-	var target_date = $('#target_date').data("target-date");
-	var genre_name = $('#genre_name').data("genre-name");
 	if(state == YT.PlayerState.ENDED) {
 		$.ajax({
 			url: '/ranks/next',
 			type: 'POST',
-			data: {this_date: target_date,
-		           name: genre_name,
-		           now_ranking: now_ranking}
+			data: {this_date: $('#target_date').data("target-date"),
+		           name: $('#genre_name').data("genre-name"),
+		           now_ranking: $('#player1').data("now-ranking")}
 		});
 	};
 };
