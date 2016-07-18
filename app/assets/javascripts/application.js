@@ -43,6 +43,12 @@ function onYouTubeIframeAPIReady() {
 };
 
 function onPlayerReady(event) {
+	$('#play_button').click(function(){
+		ytplayer.playVideo();
+	});
+	$('#pause_button').click(function(){
+		ytplayer.pauseVideo();
+	});
 };
 
 function onPlayerStateChange(event) {
