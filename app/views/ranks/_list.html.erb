@@ -14,13 +14,22 @@
   <tbody>
     <% contents.each do |rank| %>
       <tr>
-        <td><%= rank.target_date %></td>
-        <td><%= rank.genre_name %></td>
+        <td id="target_date" data-target-date="<%= rank.target_date %>" >
+          <%= rank.target_date %></td>
+        <td id="genre_name" data-genre-name="<%= rank.genre_name %>" >
+          <%= rank.genre_name %></td>
         <td><%= rank.ranking %></td>
         <td><%= rank.artist %></td>
         <td><%= rank.title %></td>
-        <td><iframe width="560" height="315" src=<%= "https://www.youtube.com/embed/" + rank.youtube_url %> frameborder="0" allowfullscreen></iframe></td>
+        <td>
+          <% if running_ranking == rank.ranking then %> 
+          <div id="player1" data-video-id="<%= rank.youtube_url %>" data-now-ranking="<%= running_ranking %>">></div>
+          <% else %>
+          <iframe width="320" height="180" src=<%= "http://i.ytimg.com/vi/" + rank.youtube_url + "/mqdefault.jpg" %> frameborder="0" allowfullscreen></iframe>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
