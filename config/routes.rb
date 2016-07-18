@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     post '/ranks/result'
     post '/ranks/next'
+    post '/ranks/prev'
     root 'ranks#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
