@@ -1,26 +1,21 @@
-<%- model_view_ranking = ViewRanking -%>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_view_ranking.human_attribute_name(:DATE) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:GENRE) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:RANKING) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:ARTIST) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:TITLE) %></th>
-      <th><%= model_view_ranking.human_attribute_name(:MV) %></th>
-    </tr>
-  </thead>
+<table id="mv_table">
   <tbody>
     <% contents.each do |rank| %>
+    <% if running_ranking == rank.ranking then %>
+      <% running_flg = 'running' %>
+    <% else%>
+      <% running_flg = 'no_running' %>
+    <% end%>
       <tr>
         <td id="target_date" data-target-date="<%= rank.target_date %>" >
-          <%= rank.target_date %></td>
+        </td>
         <td id="genre_name" data-genre-name="<%= rank.genre_name %>" >
-          <%= rank.genre_name %></td>
-        <td><%= rank.ranking %></td>
-        <td><%= rank.artist %></td>
-        <td><%= rank.title %></td>
+        </td>
+        <td id="<%= running_flg %>">
+          <p><%= rank.ranking %></p>
+          <p><%= rank.artist %></p>
+          <p><%= rank.title %></p>
+        </td>
         <td>
           <% if rank.youtube_url == nil then %>
             <p>VideoID未設定</p>
@@ -33,6 +28,7 @@
           <% end %>
         </td>
       </tr>
+    </div>
     <% end %>
   </tbody>
 </table>
