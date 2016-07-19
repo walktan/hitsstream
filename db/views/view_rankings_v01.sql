@@ -3,7 +3,8 @@ SELECT	md.this_date target_date,
  		r.rank ranking,
    		mm.artist artist,
    		mm.title title,
-   		mm.youtube_url youtube_url
+   		mm.youtube_url youtube_url,
+   		mm.id mst_music_id
 FROM	RANKS r,
  			MST_DATES md,
  			MST_GENRES mg,

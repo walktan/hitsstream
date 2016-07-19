@@ -59,10 +59,6 @@ div.page-footer {
     margin-top: 6px;
 }
 
-div.page-footer a {
-    padding: 6px;
-}
-
 * html div#mv_list{  
     height: 100%;  
     overflow: auto;
@@ -77,7 +73,7 @@ table#mv_table{
 
 table#mv_table td#running{
     width: 240px;
-    font-size: 20px;
+    font-size: 18px;
     color: #666666;
     background-color: #E3DECC;
     border-top: 1px #ffffff solid;
@@ -111,11 +107,26 @@ table#mv_table td#no_running{
   border: 0px solid #D2BA85;
   border-radius: 5px;
   color: #666666;
-  font-size: 14px;
-  height: 24px;
+  font-size: 12px;
+  height: 25px;
   line-height: 20px;
   text-align: center;
   vertical-align: middle;
-  margin-left: 10px;
-  width: 120px;
+  margin-left: 8px;
+  width: 90px;
+}
+
+#edit_link {
+  text-decoration: none;
+  color: #666666;
+}
+
+#edit_p {
+  text-indent: 12px;
+  font-size: 12px;
+}
+
+#no_video_alert {
+  font-size: 12px;
+  color: #666666;
 }

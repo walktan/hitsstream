@@ -60,7 +60,8 @@ ActiveRecord::Schema.define(version: 20160710100308) do
       r.rank AS ranking,
       mm.artist,
       mm.title,
-      mm.youtube_url
+      mm.youtube_url,
+      mm.id AS mst_music_id
      FROM ranks r,
       mst_dates md,
       mst_genres mg,

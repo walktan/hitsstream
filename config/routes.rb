@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
     resources :ranks
-    resources :mst_dates
-    resources :mst_genres
+    resources :mst_musics
 
     post '/ranks/result'
     post '/ranks/next'
