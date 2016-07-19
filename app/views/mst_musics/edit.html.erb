@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Hits Stream</h1>
+</div>
+
+<div id='mv_list'>
+	<p>VideoID</p>
+	<%= form_for @mst_music do |f| %>
+	<p>
+		<%= f.text_field :youtube_url %>
+	</p>
+	<p>
+		<%= f.submit 'UPDATE' %>
+	</p>
+
+	<% end %>
+</div>
+
+<div class="page-footer">
+</div>
