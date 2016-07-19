@@ -28,8 +28,8 @@ $(function(){
 function onYouTubeIframeAPIReady() {
 	var video_id = $('#player1').data("video-id");
 	ytplayer = new YT.Player('player1', {
-		height: '270',
-		width: '480',
+		height: '324',
+		width: '576',
 		videoId: video_id,
 		playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定

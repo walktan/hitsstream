@@ -1,9 +1,8 @@
 class RanksController < ApplicationController
 
 	def index
-		# 日付の取得
-		today = Date.today
-		@view_rankings = ViewRanking.where(target_date: today, genre_name: "J-Pop").order('ranking')
+		max_date = MstDate.maximum(:this_date)
+		@view_rankings = ViewRanking.where(target_date: max_date, genre_name: "J-Pop").order('ranking')
 		@mst_dates = MstDate.select(:id, :this_date)
 		@mst_genres = MstGenre.select(:id, :name)
 		@running_ranking = 1

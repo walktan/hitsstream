@@ -1,5 +1,5 @@
 $(function(){
-	$('#search_result').html("<%= j(render(:partial => 'list', :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
+	$('#mv_list').html("<%= j(render(:partial => 'list', :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
 	$("#now_ranking").val(<%= @running_ranking %>);
 	onYouTubeIframeAPIReady();
 });
