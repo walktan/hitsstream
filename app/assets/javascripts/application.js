@@ -44,10 +44,12 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
 	$('#play_button, #play_button_list').click(function(){
-		ytplayer.playVideo();
-	});
-	$('#pause_button, #pause_button_list').click(function(){
-		ytplayer.pauseVideo();
+		var state = ytplayer.getPlayerState();
+		if(state == YT.PlayerState.PLAYING) {
+			ytplayer.pauseVideo();
+		}else{
+			ytplayer.playVideo();
+		};
 	});
 	$('#next_button, #next_button_list').click(function(){
 		$.ajax({
@@ -80,4 +82,16 @@ function onPlayerStateChange(event) {
 		           now_ranking: $('#player1').data("now-ranking")}
 		});
 	};
+	if(state == YT.PlayerState.PLAYING) {
+	document.getElementById("play_button").innerHTML="［ PAUSE ■ ］";
+	document.getElementById("play_button_list").innerHTML="■";
+	document.getElementById("play_button_list").className="play";
+
+	};
+	if(state == YT.PlayerState.PAUSED) {
+	document.getElementById("play_button").innerHTML="［ PLAY ▶ ］";
+	document.getElementById("play_button_list").innerHTML="▶";
+	document.getElementById("play_button_list").className="pause";
+	};
 };
+
