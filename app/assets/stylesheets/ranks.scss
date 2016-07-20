@@ -155,21 +155,49 @@ table#mv_table td#no_running{
   border: 1px solid #FFF;
 }
 
-#play_button_list {
+.pause {
+  width: 25px;
+  height: 20px;
+  background: #FFF;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  padding: 15px 10px 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in;
+  margin: 10px 20px 10px 0px;
   border: 1px solid #EB2142;
   color: #EB2142;
 }
-#play_button_list:hover {
+.pause:hover {
   background: #EB2142;
   color: #FFF;
   border: 1px solid #FFF;
 }
 
-#pause_button_list {
+.play {
+  width: 25px;
+  height: 20px;
+  background: #FFF;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  padding: 15px 10px 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in;
+  margin: 10px 20px 10px 0px;
   border: 1px solid #1253A4;
   color: #1253A4;
 }
-#pause_button_list:hover {
+.play:hover {
   background: #1253A4;
   color: #FFF;
   border: 1px solid #FFF;
