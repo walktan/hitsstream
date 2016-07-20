@@ -22,7 +22,7 @@
             <% rank.youtube_url = 'WMR0NjbsMf4' %>
           <% end%>
           <% if running_ranking == rank.ranking then %> 
-          <div id="player1" data-video-id="<%= rank.youtube_url %>" data-now-ranking="<%= running_ranking %>">></div>
+          <div id="player1" data-video-id="<%= rank.youtube_url %>" data-now-ranking="<%= running_ranking %>"></div>
           <% else %>
           <iframe width="320" height="180" src=<%= "http://i.ytimg.com/vi/" + rank.youtube_url + "/mqdefault.jpg" %> frameborder="0" allowfullscreen></iframe>
           <% end %>

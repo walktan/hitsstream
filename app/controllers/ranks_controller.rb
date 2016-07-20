@@ -37,4 +37,8 @@ class RanksController < ApplicationController
 		@running_ranking = prev_ranking
 	end
 
+	def back
+		redirect_to root_path
+	end
+
 end

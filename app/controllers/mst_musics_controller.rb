@@ -6,7 +6,7 @@ class MstMusicsController < ApplicationController
 	def update
 		@mst_music = MstMusic.find(params[:id])
 		if @mst_music.update(mst_music_params)
-			redirect_to '/'
+			redirect_to root_path
 		else
 			render 'edit'
 		end
