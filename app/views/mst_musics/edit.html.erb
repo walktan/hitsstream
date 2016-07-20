@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Hits Stream</h1>
+  <h1 id='h1'>Hits Stream</h1>
 </div>
 
 <div id='mv_list'>
@@ -17,3 +17,11 @@
 
 <div class="page-footer">
 </div>
+
+<%= javascript_tag do %>
+$(document).ready(function(){
+  $('#h1').click(function(){
+    location.href = '/'
+  });
+});
+<% end %>

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Hits Stream</h1>
+  <h1 id='h1'>Hits Stream</h1>
 
 <ul id="result"></ul>
 
@@ -30,3 +30,11 @@ Genre
 	<label id='prev_button'>［ ← PREV ］</label>
 	<label id='next_button'>［ NEXT → ］</label>
 </div>
+
+<%= javascript_tag do %>
+$(document).ready(function(){
+  $('#h1').click(function(){
+    location.href = '/'
+  });
+});
+<% end %>
