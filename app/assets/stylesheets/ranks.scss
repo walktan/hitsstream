@@ -72,8 +72,8 @@ table#mv_table{
 }
 
 table#mv_table td#running{
-    width: 240px;
-    font-size: 18px;
+    width: 220px;
+    font-size: 16px;
     color: #666666;
     background-color: #E3DECC;
     border-top: 1px #ffffff solid;
@@ -83,7 +83,7 @@ table#mv_table td#running{
 }
 
 table#mv_table td#no_running{
-    width: 240px;
+    width: 220px;
     font-size: 14px;
     color: #666666;
 }
@@ -129,4 +129,48 @@ table#mv_table td#no_running{
 #no_video_alert {
   font-size: 12px;
   color: #666666;
+}
+
+.list_button {
+  width: 25px;
+  height: 20px;
+  background: #FFF;
+  border: 1px solid #4E9ABE;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  color: #4E9ABE;
+  padding: 15px 10px 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in;
+  margin: 10px 20px 10px 0px;
+}
+.list_button:hover {
+  background: #4E9ABE;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+#play_button_list {
+  border: 1px solid #EB2142;
+  color: #EB2142;
+}
+#play_button_list:hover {
+  background: #EB2142;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+#pause_button_list {
+  border: 1px solid #1253A4;
+  color: #1253A4;
+}
+#pause_button_list:hover {
+  background: #1253A4;
+  color: #FFF;
+  border: 1px solid #FFF;
 }

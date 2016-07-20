@@ -43,13 +43,13 @@ function onYouTubeIframeAPIReady() {
 };
 
 function onPlayerReady(event) {
-	$('#play_button').click(function(){
+	$('#play_button, #play_button_list').click(function(){
 		ytplayer.playVideo();
 	});
-	$('#pause_button').click(function(){
+	$('#pause_button, #pause_button_list').click(function(){
 		ytplayer.pauseVideo();
 	});
-	$('#next_button').click(function(){
+	$('#next_button, #next_button_list').click(function(){
 		$.ajax({
 			url: '/ranks/next',
 			type: 'POST',
@@ -58,7 +58,7 @@ function onPlayerReady(event) {
 		           now_ranking: $('#player1').data("now-ranking")}
 		});
 	});
-	$('#prev_button').click(function(){
+	$('#prev_button, #prev_button_list').click(function(){
 		$.ajax({
 			url: '/ranks/prev',
 			type: 'POST',
