@@ -7,6 +7,14 @@
       <% running_flg = 'no_running' %>
     <% end%>
       <tr>
+        <td>
+          <% if running_ranking == rank.ranking then %>
+            <label id='prev_button_list', class='list_button'>↑</label>
+            <label id='play_button_list', class='list_button'>▶</label>
+            <label id='pause_button_list', class='list_button'>■</label>
+            <label id='next_button_list', class='list_button'>↓</label>
+          <% end %>
+        </td>
         <td id="target_date" data-target-date="<%= rank.target_date %>" >
         </td>
         <td id="genre_name" data-genre-name="<%= rank.genre_name %>" >
