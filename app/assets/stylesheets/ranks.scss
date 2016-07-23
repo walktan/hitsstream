@@ -26,7 +26,7 @@ div.page-header {
 
 div.page-header h1 {  
     margin-top: 10px;
-    margin-buttom: 0px;
+    margin-bottom: 20px;
 }
 
 div#date_label {
@@ -61,7 +61,7 @@ div.page-footer {
 
 * html div#mv_list{  
     height: 100%;  
-    overflow: auto;
+    overflow: hidden;
 }
 
 table#mv_table{
@@ -201,4 +201,94 @@ table#mv_table td#no_running{
   background: #1253A4;
   color: #FFF;
   border: 1px solid #FFF;
+}
+
+
+
+//スマートフォン対応
+@media only screen and (max-width: 980px) {
+
+    body{  
+    margin: 0;  
+    padding: 230px 0 60px 0;
+    font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+    }
+
+    div.page-header {  
+    position: fixed !important;  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 220px;
+    background-color: #4E9ABE;  
+    color: #fff;
+    padding-left: 10px;
+    }
+
+    div.page-header h1 {  
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 72px;
+    }
+
+    div#date_label {
+    display:inline;
+    font-size: 28px;
+    height: 48px;
+    width: 220px;
+    margin-left: 4px;
+    }
+
+    div#genre_label {
+    display:inline;
+    font-size: 28px;
+    height: 48px;
+    width: 220px;
+    margin-left: 18px;
+    }
+
+    #select_tag {
+    background: #FFFDF4;
+    border: 0px solid #D2BA85;
+    border-radius: 5px;
+    color: #0C2245;
+    font-size: 24px;
+    height: 48px;
+    line-height: 20px;
+    text-align: left;
+    text-indent: 5px;
+    vertical-align: middle;
+    width: 220px;
+    margin-left: 8px;
+    }
+
+    #submit_tag {
+    background: #E3DECC;
+    border: 0px solid #D2BA85;
+    border-radius: 5px;
+    color: #666666;
+    font-size: 24px;
+    height: 50px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 16px;
+    width: 160px;
+    }
+
+    div.page-footer {
+    position: fixed !important;  
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100px;  
+    background-color: #4E9ABE;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 12px;
+    }
+ 
 }
