@@ -1,0 +1,42 @@
+<div id='update-form'>
+  <%= form_for @mst_music do |f| %>
+    <% if @new_url != '' %>
+      <%= f.hidden_field  :youtube_url, :value => @new_url %>
+      <%= f.submit '以下のとおり更新する', :id => 'update-button'%>
+    <% end %>
+  <% end %>
+</div>
+<%= form_tag("/mst_musics/confirm", :remote => true, :method => 'post') do %>
+  <%= hidden_field_tag(:id, @mst_music.id ) %>
+  <table id="edit_table">
+    <tbody>
+      <tr>
+        <td>
+          <p>現在のURI</p>
+          <p>https://www.youtube.com/watch?v=<%= @mst_music.youtube_url %></p>
+        </td>
+        <td>
+          <p>更新後のURL</p>
+          <p>https://www.youtube.com/watch?v=<%= text_field_tag :new_url, value = @new_url %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+           <%= submit_tag("MVの内容を確認する", :id => 'confirm_button') %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>現在のMV</p>
+          <p><iframe width="480" height="270" src=<%= "https://www.youtube.com/embed/" + @mst_music.youtube_url %> frameborder="0" ></iframe></p>
+        </td>
+        <td>
+          <p>更新後のMV<p/>
+          <p><iframe width="480" height="270" src=<%= "https://www.youtube.com/embed/" + @new_url %> frameborder="0" ></iframe></P>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

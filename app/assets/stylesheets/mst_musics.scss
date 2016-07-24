@@ -1,3 +1,56 @@
 // Place all the styles related to the MstMusics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#edit-title{  
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+div#sub-title {
+	display:inline;
+    font-size: 22px;
+}
+
+div#update-form {
+	height: 20px;
+	text-align: center;
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div#target-mv {
+	display:inline;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+table#edit_table{
+    padding: 0px 120px;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+    color: #666666;
+}
+
+#update-button{
+    width: 260px;
+    border-radius:5px;
+    padding:10px;
+    background:#EB2142;
+    color:#ffffff;
+    text-align:center;
+    text-decoration:none;
+    border: none;
+}
+
+#confirm_button{
+    width: 140px;
+    border-radius:5px;
+    padding:8px;
+    background:#1253A4;
+    color:#ffffff;
+    text-align:center;
+    text-decoration:none;
+    border: none;
+}
