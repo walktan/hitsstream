@@ -2,15 +2,24 @@ class MstMusicsController < ApplicationController
 
 	def edit
 		@mst_music = MstMusic.find(params[:id])
+		@new_url = ''
 		flash[:target_date] = params[:target_date]
 		flash[:genre] = params[:genre]
 		flash[:now_ranking] = params[:now_ranking]
 	end
 
-	def update
+	def confirm
 		@mst_music = MstMusic.find(params[:id])
+		@new_url = params[:new_url]
 		flash[:this_date] = flash[:target_date]
 		flash[:name] = flash[:genre]
+		flash[:now_ranking] = flash[:now_ranking]
+	end
+
+	def update
+		@mst_music = MstMusic.find(params[:id])
+		flash[:this_date] = flash[:this_date]
+		flash[:name] = flash[:name]
 		flash[:now_ranking] = flash[:now_ranking]
 		if @mst_music.update(mst_music_params)
 			redirect_to root_path
