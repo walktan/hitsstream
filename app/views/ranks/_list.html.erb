@@ -29,13 +29,13 @@
             <% rank.youtube_url = 'WMR0NjbsMf4' %>
           <% end%>
           <% if running_ranking == rank.ranking then %> 
-          <div id="player1" data-video-id="<%= rank.youtube_url %>" data-now-ranking="<%= running_ranking %>"></div>
+          <div id="player1" data-video-id="<%= rank.youtube_url %>" data-now-ranking="<%= running_ranking %>"</div>
           <% else %>
           <iframe width="320" height="180" src=<%= "http://i.ytimg.com/vi/" + rank.youtube_url + "/mqdefault.jpg" %> frameborder="0" allowfullscreen></iframe>
           <% end %>
         </td>
         <td>
-          <p id="edit_p"><%= link_to "[Edit]", edit_mst_music_path(rank.mst_music_id), :id => "edit_link" %></p>
+          <p id="edit_p"><%= link_to "[Edit]", edit_mst_music_path(rank.mst_music_id, {:target_date => rank.target_date, :genre => rank.genre_name, :now_ranking => rank.ranking}), :id => "edit_link" %></p>
         </td>
       </tr>
     </div>
