@@ -2,10 +2,17 @@ class RanksController < ApplicationController
 
 	def index
 		max_date = MstDate.maximum(:this_date)
-		@view_rankings = ViewRanking.where(target_date: max_date, genre_name: "J-Pop").order('ranking')
+		@target_date = max_date
+		@genre_name = "J-Pop"
+		@running_ranking = 1
+		if !flash[:name].nil? && !flash[:this_date].nil? && !flash[:now_ranking].nil?
+			@target_date = flash[:this_date]
+			@genre_name = flash[:name]
+			@running_ranking = flash[:now_ranking].to_i
+		end
+		@view_rankings = ViewRanking.where(target_date: @target_date, genre_name: @genre_name).order('ranking')
 		@mst_dates = MstDate.select(:id, :this_date)
 		@mst_genres = MstGenre.select(:id, :name)
-		@running_ranking = 1
 	end
 
 	def result

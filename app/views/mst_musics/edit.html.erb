@@ -9,6 +9,9 @@
 		<%= f.text_field :youtube_url %>
 	</p>
 	<p>
+		<%= f.hidden_field :target_date, :value => @target_date %>
+		<%= f.hidden_field :genre, :value => @genre %>
+		<%= f.hidden_field :now_ranking, :value => @now_ranking %>
 		<%= f.submit 'UPDATE' %>
 	</p>
 
