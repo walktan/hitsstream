@@ -24,12 +24,33 @@ div.page-header {
     padding-left: 10px;
 }
 
+div#title {
+  float: left;
+}
+
+div#description {
+  float: right;
+  margin-top: 6px;
+  margin-right: 0px;
+  text-align: right;
+  width: 320px;
+}
+
+div#description p {
+  display: inline;
+  margin-right: 20px;
+  cursor:pointer;
+}
+
 div.page-header h1 {  
     margin-top: 10px;
     margin-bottom: 20px;
+    cursor:pointer;
 }
 
 div#date_label {
+    clear: both;
+    float: left;
     display:inline;
     font-size: 14px;
     height: 24px;
@@ -38,11 +59,47 @@ div#date_label {
 }
 
 div#genre_label {
+    float: left;
     display:inline;
     font-size: 14px;
     height: 24px;
     width: 140px;
-    margin-left: 36px;
+    margin-left: 6px;
+}
+
+div#select_form {
+  clear: both;
+  float: left;
+}
+
+#select_tag {
+  background: #FFFDF4;
+  border: 0px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 140px;
+  cursor:pointer;
+}
+
+#submit_tag {
+  background: #E3DECC;
+  border: 0px solid #D2BA85;
+  border-radius: 5px;
+  color: #666666;
+  font-size: 12px;
+  height: 25px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 8px;
+  width: 90px;
+  cursor:pointer;
 }
 
 div.page-footer {
@@ -88,34 +145,6 @@ table#mv_table td#no_running{
     color: #666666;
 }
 
-#select_tag {
-  background: #FFFDF4;
-  border: 0px solid #D2BA85;
-  border-radius: 5px;
-  color: #0C2245;
-  font-size: 12px;
-  height: 24px;
-  line-height: 20px;
-  text-align: left;
-  text-indent: 5px;
-  vertical-align: middle;
-  width: 140px;
-}
-
-#submit_tag {
-  background: #E3DECC;
-  border: 0px solid #D2BA85;
-  border-radius: 5px;
-  color: #666666;
-  font-size: 12px;
-  height: 25px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-  margin-left: 8px;
-  width: 90px;
-}
-
 #edit_link {
   text-decoration: none;
   color: #666666;
@@ -148,6 +177,7 @@ table#mv_table td#no_running{
   transition: background-color 0.5s ease-in;
   -webkit-transition: background-color 0.5s ease-in;
   margin: 10px 20px 10px 0px;
+  cursor:pointer;
 }
 .list_button:hover {
   background: #4E9ABE;
@@ -172,6 +202,7 @@ table#mv_table td#no_running{
   margin: 10px 20px 10px 0px;
   border: 1px solid #EB2142;
   color: #EB2142;
+  cursor:pointer;
 }
 .pause:hover {
   background: #EB2142;
@@ -203,9 +234,64 @@ table#mv_table td#no_running{
   border: 1px solid #FFF;
 }
 
+.footer-button {
+  cursor:pointer;
+}
 
 
-//スマートフォン対応
+
+/* ツールチップ対応 */
+
+div.tooltip1 p{
+  border-bottom:dashed 1px #555;
+  font-size: 15px;
+}
+
+// ツールチップ部分を隠す
+div.tooltip1 span {
+    display: none;
+}
+// マウスオーバー
+div.tooltip1:hover {
+    position: relative;
+    color: #DADADA;
+}
+// マウスオーバー時にツールチップを表示
+div.tooltip1:hover span {
+    display: block;
+    text-align: left;
+    position: absolute;
+    top: 25px;
+    font-size: 13px;
+    color: #0C2245;
+    background-color: #FFFDF4;
+    width: 290px;
+    padding: 8px;
+    border-radius:3px;
+    z-index:100;
+}
+ 
+// フキダシ部分を作成
+div.tooltip1 span:before{
+    content:''; 
+    display:block; 
+    position:absolute;
+    height:0;
+    width:0; 
+    top:-13px;
+    right:15px;
+    border:13px transparent solid; 
+    border-right-width:0;
+    border-left-color:#FFFDF4;
+    transform:rotate(270deg);  //傾きをつける
+    -webkit-transform:rotate(270deg);
+    -o-transform:rotate(270deg);
+    z-index:100;
+}
+
+
+
+/* スマートフォン対応 */
 @media only screen and (max-width: 980px) {
 
     body{  
@@ -230,22 +316,6 @@ table#mv_table td#no_running{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 72px;
-    }
-
-    div#date_label {
-    display:inline;
-    font-size: 28px;
-    height: 48px;
-    width: 220px;
-    margin-left: 4px;
-    }
-
-    div#genre_label {
-    display:inline;
-    font-size: 28px;
-    height: 48px;
-    width: 220px;
-    margin-left: 18px;
     }
 
     #select_tag {
@@ -288,7 +358,7 @@ table#mv_table td#no_running{
     color: #fff;
     text-align: center;
     font-size: 36px;
-    margin-top: 12px;
+    margin: 12px;
     }
  
 }
