@@ -1,5 +1,4 @@
 class RanksController < ApplicationController
-
 	def index
 		max_date = MstDate.maximum(:this_date)
 		@target_date = max_date
@@ -43,5 +42,4 @@ class RanksController < ApplicationController
 		end
 		@running_ranking = prev_ranking
 	end
-
 end

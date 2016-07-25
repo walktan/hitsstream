@@ -1,12 +1,14 @@
 <div class="page-header">
 	<div id='title'>
-		<h1 id='top-title'>Hits Stream</h1>
- 	</div>
-	<div id='description' class='tooltip1'><p>Hits Streamとは？</p>
- 		<span>
- 			iTunesの楽曲ランキングに応じたYouTube動画を<br>
- 			自動再生する無料BGMサイトです
- 		</span>
+		<h1>Hits Stream</h1>
+	</div>
+	<div id='description' class='tooltip'>
+		<p>
+			Hits Streamとは？
+		</p>
+		<span>
+			iTunesの楽曲ランキングに応じたYouTube動画を<br>自動再生する無料BGMサイトです
+		</span>
 	</div>
 	<div id='date_label'>
 		Aggregate Date
@@ -16,10 +18,10 @@
 	</div>
 	<div id='select_form'>
 		<%= form_tag('/ranks/result', :remote => true, :method => 'post' ) do %>
-			<%= select_tag(:this_date, options_from_collection_for_select(@mst_dates.order("id DESC"), :this_date, :this_date, @target_date), :id => 'select_tag' )%>
-			<%= select_tag(:name, options_from_collection_for_select(@mst_genres.order("id"), :name, :name, @genre_name), :id => 'select_tag')%>
-			<%= hidden_field_tag(:now_ranking, @running_ranking, :id => 'now_ranking') %>
-			<%= submit_tag("Select", :id => 'submit_tag') %>
+		<%= select_tag(:this_date, options_from_collection_for_select(@mst_dates.order("id DESC"), :this_date, :this_date, @target_date), :id => 'select_tag' )%>
+		<%= select_tag(:name, options_from_collection_for_select(@mst_genres.order("id"), :name, :name, @genre_name), :id => 'select_tag')%>
+		<%= hidden_field_tag(:now_ranking, @running_ranking, :id => 'now_ranking') %>
+		<%= submit_tag("Select", :id => 'submit_tag') %>
 		<% end %>
 	</div>
 </div>
@@ -35,9 +37,9 @@
 </div>
 
 <%= javascript_tag do %>
-	$(document).ready(function(){
-  		$('#top-title').click(function(){
-    		location.href = '/'
-  		});
-	});
+  $(document).ready(function(){
+    $('#title').click(function(){
+      location.href = '/'
+    });
+  });
 <% end %>

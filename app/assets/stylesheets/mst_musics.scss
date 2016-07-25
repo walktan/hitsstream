@@ -2,31 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#edit-title{  
+#edit-title {  
     margin-top: 10px;
     margin-bottom: 40px;
     cursor:pointer;
 }
 
 div#sub-title {
-	display:inline;
+    display:inline;
     font-size: 22px;
 }
 
 div#update-form {
-	height: 20px;
-	text-align: center;
-	margin-top: 10px;
+    height: 20px;
+    text-align: center;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 div#target-mv {
-	display:inline;
+    display:inline;
     font-size: 16px;
     margin-left: 20px;
 }
 
-table#edit_table{
+table#edit_table {
     padding: 0px 120px;
     margin: auto;
     border-collapse: separate;
@@ -34,7 +34,7 @@ table#edit_table{
     color: #666666;
 }
 
-#update-button{
+#update-button {
     width: 260px;
     border-radius:5px;
     padding:10px;
@@ -45,7 +45,7 @@ table#edit_table{
     border: none;
 }
 
-#confirm_button{
+#confirm_button {
     width: 140px;
     border-radius:5px;
     padding:8px;

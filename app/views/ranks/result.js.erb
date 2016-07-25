@@ -1,6 +1,6 @@
 $(function(){
-	$('#middle').html("<%= j(render(:partial => 'list', :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
-	$("#now_ranking").val(<%= @running_ranking %>);
-	onYouTubeIframeAPIReady();
-	window.scrollTo( 0, 0 );
+　　$('#middle').html("<%= j(render(:partial => 'list', :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
+　　$("#now_ranking").val(<%= @running_ranking %>);
+　　onYouTubeIframeAPIReady();
+　　window.scrollTo( 0, 0 );
 });
