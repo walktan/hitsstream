@@ -1,0 +1,398 @@
+/* line 5, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+#edit-title {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+/* line 11, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+div#sub-title {
+  display: inline;
+  font-size: 22px;
+}
+
+/* line 16, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+div#update-form {
+  height: 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 23, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+div#target-mv {
+  display: inline;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+/* line 29, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+table#edit_table {
+  padding: 0px 120px;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  color: #666666;
+}
+
+/* line 37, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+#update-button {
+  width: 260px;
+  border-radius: 5px;
+  padding: 10px;
+  background: #EB2142;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+
+/* line 48, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/mst_musics.scss */
+#confirm_button {
+  width: 140px;
+  border-radius: 5px;
+  padding: 8px;
+  background: #1253A4;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+}
+@charset "UTF-8";
+/* line 5, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+body {
+  margin: 0;
+  padding: 145px 0 60px 0;
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+}
+
+/* line 11, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+* html body {
+  overflow: hidden;
+}
+
+/* line 15, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div.page-header {
+  position: fixed !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  background-color: #4E9ABE;
+  color: #fff;
+  padding-left: 10px;
+}
+
+/* line 27, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div.page-header h1 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* line 33, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div#date_label {
+  float: left;
+  display: inline;
+  font-size: 14px;
+  height: 24px;
+  width: 140px;
+  margin-left: 2px;
+}
+
+/* line 42, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div#genre_label {
+  float: left;
+  display: inline;
+  font-size: 14px;
+  height: 24px;
+  width: 140px;
+  margin-left: 6px;
+}
+
+/* line 51, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div#select_form {
+  clear: both;
+  float: left;
+}
+
+/* line 56, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+#select_tag {
+  background: #FFFDF4;
+  border: 0px solid #D2BA85;
+  border-radius: 5px;
+  color: #0C2245;
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  text-align: left;
+  text-indent: 5px;
+  vertical-align: middle;
+  width: 140px;
+}
+
+/* line 70, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+#submit_tag {
+  background: #E3DECC;
+  border: 0px solid #D2BA85;
+  border-radius: 5px;
+  color: #666666;
+  font-size: 12px;
+  height: 25px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 8px;
+  width: 90px;
+}
+
+/* line 84, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div#description {
+  float: right;
+}
+
+/* line 88, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div#description p {
+  display: inline;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* line 94, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+div.page-footer {
+  position: fixed !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #4E9ABE;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+/* line 108, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+* html div#middle {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 113, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+table#mv_table {
+  padding: 0px 120px;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+}
+
+/* line 120, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+table#mv_table td#running {
+  width: 220px;
+  font-size: 16px;
+  color: #666666;
+  background-color: #E3DECC;
+  border-top: 1px #ffffff solid;
+  border-right: 3px #ffffff solid;
+  border-bottom: 7px #ffffff solid;
+  text-indent: 5px;
+}
+
+/* line 131, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+table#mv_table td#no_running {
+  width: 220px;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* line 137, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+#edit_link {
+  text-decoration: none;
+  color: #666666;
+}
+
+/* line 142, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+#edit_p {
+  text-indent: 12px;
+  font-size: 12px;
+}
+
+/* line 147, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+#no_video_alert {
+  font-size: 12px;
+  color: #666666;
+}
+
+/* line 152, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+.list_button {
+  width: 25px;
+  height: 20px;
+  background: #FFF;
+  border: 1px solid #4E9ABE;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  color: #4E9ABE;
+  padding: 15px 10px 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in;
+  margin: 10px 20px 10px 0px;
+}
+
+/* line 170, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+.list_button:hover {
+  background: #4E9ABE;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+/* line 176, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+.pause {
+  width: 25px;
+  height: 20px;
+  background: #FFF;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  padding: 15px 10px 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in;
+  margin: 10px 20px 10px 0px;
+  border: 1px solid #EB2142;
+  color: #EB2142;
+}
+
+/* line 194, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+.pause:hover {
+  background: #EB2142;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+/* line 200, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+.play {
+  width: 25px;
+  height: 20px;
+  background: #FFF;
+  border-radius: 35px;
+  -moz-border-radius: 35px;
+  -webkit-border-radius: 35px;
+  padding: 15px 10px 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.5s ease-in;
+  -webkit-transition: background-color 0.5s ease-in;
+  margin: 10px 20px 10px 0px;
+  border: 1px solid #1253A4;
+  color: #1253A4;
+}
+
+/* line 218, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+.play:hover {
+  background: #1253A4;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+@media only screen and (max-width: 980px) {
+  /* line 228, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+  body {
+    margin: 0;
+    padding: 230px 0 60px 0;
+    font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  }
+
+  /* line 234, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+  div.page-header {
+    position: fixed !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background-color: #4E9ABE;
+    color: #fff;
+    padding-left: 10px;
+  }
+
+  /* line 246, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+  div.page-header h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 72px;
+  }
+
+  /* line 252, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+  #select_tag {
+    background: #FFFDF4;
+    border: 0px solid #D2BA85;
+    border-radius: 5px;
+    color: #0C2245;
+    font-size: 24px;
+    height: 48px;
+    line-height: 20px;
+    text-align: left;
+    text-indent: 5px;
+    vertical-align: middle;
+    width: 220px;
+    margin-left: 8px;
+  }
+
+  /* line 267, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+  #submit_tag {
+    background: #E3DECC;
+    border: 0px solid #D2BA85;
+    border-radius: 5px;
+    color: #666666;
+    font-size: 24px;
+    height: 50px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 16px;
+    width: 160px;
+  }
+
+  /* line 281, /home/vagrant/projects/hitsstream/hitss_42/app/assets/stylesheets/ranks.scss */
+  div.page-footer {
+    position: fixed !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #4E9ABE;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 12px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
