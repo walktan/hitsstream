@@ -1,0 +1,34 @@
+.footer-button {
+  cursor:pointer;
+}
+
+div.page-footer {
+    position: fixed !important;  
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 50px;  
+    background-color: #4E9ABE;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+/* スマートフォン対応 */
+@media only screen and (max-width: 980px) {
+	div.page-footer {
+    	position: fixed !important;  
+	    position: absolute;  
+	    bottom: 0;  
+	    left: 0;  
+	    width: 100%;  
+	    height: 100px;  
+	    background-color: #4E9ABE;
+	    color: #fff;
+	    text-align: center;
+	    font-size: 36px;
+	    margin: 12px;
+	}
+}

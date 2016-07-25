@@ -1,26 +1,24 @@
 <div class="page-header">
-  <h1 id='edit-title'>Hits Stream</h1>
-
+  <div id="edit-title">
+    <h1>Hits Stream</h1>
+  </div>
   <div id='sub-title'>
-  Edit URI
+    Edit URI
   </div>
-  <div id='target-mv'>
-  <%= @mst_music.artist %> / <%= @mst_music.title %>
-  </div>
-
+  <div id='target-mv'><%= @mst_music.artist %> / <%= @mst_music.title %></div>
 </div>
 
 <div id='middle'>
-<%= render partial: 'edit_table', locals: {contents: @mst_music} %>
+  <%= render partial: 'edit_table', locals: {contents: @mst_music} %>
 </div>
 
 <div class="page-footer">
 </div>
 
 <%= javascript_tag do %>
-$(document).ready(function(){
-  $('#edit-title').click(function(){
-    location.href = '/'
+  $(document).ready(function(){
+    $('#edit-title').click(function(){
+     location.href = '/'
   });
 });
 <% end %>

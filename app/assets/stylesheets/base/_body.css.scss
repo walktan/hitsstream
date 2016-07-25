@@ -1,0 +1,18 @@
+body {  
+    margin: 0;  
+    padding: 145px 0 60px 0;
+    font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+}
+
+* html body {  
+    overflow: hidden;
+}
+
+/* スマートフォン対応 */
+@media only screen and (max-width: 980px) {
+    body{  
+    margin: 0;  
+    padding: 230px 0 60px 0;
+    font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+    }
+}

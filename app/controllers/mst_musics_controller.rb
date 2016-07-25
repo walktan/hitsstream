@@ -1,5 +1,4 @@
 class MstMusicsController < ApplicationController
-
 	def edit
 		@mst_music = MstMusic.find(params[:id])
 		@new_url = ''
@@ -29,7 +28,6 @@ class MstMusicsController < ApplicationController
 	end
 
 	private
-
 		def mst_music_params
 			params[:mst_music].permit(:youtube_url)
 		end

@@ -80,5 +80,4 @@ class Tasks::UpdateItunesRanking
 			return nil
 		end
 	end
-	
 end
