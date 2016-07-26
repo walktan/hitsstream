@@ -1,6 +1,6 @@
 $(function(){
-　　$('#middle').html("<%= j(render(:partial => 'list', :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
-　　$("#now_ranking").val(<%= @running_ranking %>);
+　　$("#middle").html("<%= j(render(:partial => "list", :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
+　　$("#running_ranking").val(<%= @running_ranking %>);
 　　onYouTubeIframeAPIReady();
 　　var position = 0
 　　switch (<%= @running_ranking %>) {

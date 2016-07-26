@@ -1,10 +1,10 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file that"ll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+// or any plugin"s vendor/assets/javascripts directory can be referenced here using a relative path.
 //
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// It"s not advisable to add code directly here, but if you do, it"ll appear at the bottom of the
 // compiled file.
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
@@ -21,13 +21,13 @@
 
 $(function(){
 　　// IFrame Player API の読み込み
-　　var tag = document.createElement('script');
-　　tag.src = 'https://www.youtube.com/iframe_api';
-　　var firstScriptTag = document.getElementsByTagName('script')[0];
+　　var tag = document.createElement("script");
+　　tag.src = "https://www.youtube.com/iframe_api";
+　　var firstScriptTag = document.getElementsByTagName("script")[0];
 　　firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 　　// 初期スクロール位置の指定
 　　var position = 0;
-　　switch ($('#player1').data("now-ranking")) {
+　　switch ($("#player").data("running-ranking")) {
 　　　　case 1:
 　　　　　　position = 0;
 　　　　　　break;
@@ -64,18 +64,18 @@ $(function(){
 
 // YouTubeの埋め込み
 function onYouTubeIframeAPIReady() {
-　　var video_id = $('#player1').data("video-id");
-　　ytplayer = new YT.Player('player1', {
-　　　　height: '324',
-　　　　width: '576',
+　　var video_id = $("#player").data("video-id");
+　　ytplayer = new YT.Player("player", {
+　　　　height: "324",
+　　　　width: "576",
 　　　　videoId: video_id,
 　　　　playerVars: {
                 rel: 0, // 再生終了後に関連動画を表示するかどうか設定
                 autoplay: 1 // 自動再生するかどうか設定
             },
 　　　　events: {
-　　　　　　'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+　　　　　　"onReady": onPlayerReady,
+            "onStateChange": onPlayerStateChange
         }
     });
 };
@@ -83,7 +83,7 @@ function onYouTubeIframeAPIReady() {
 // プレーヤー準備完了後処理
 // Play/Pauseボタン押下時に、プレーヤーのステータスを反転させる
 function onPlayerReady(event) {
-　　$('#play_button, #play_button_list').click(function(){
+　　$("#play_button, #play_button_list").click(function(){
 　　　　var state = ytplayer.getPlayerState();
 　　　　if(state == YT.PlayerState.PLAYING) {
 　　　　　　ytplayer.pauseVideo();
@@ -92,23 +92,23 @@ function onPlayerReady(event) {
 　　　　};
 　　});
 　　// Nextボタン押下時に、次曲の情報を取得する
-　　$('#next_button, #next_button_list').click(function(){
+　　$("#next_button, #next_button_list").click(function(){
 　　　　$.ajax({
-　　　　　　url: '/ranks/next',
-　　　　　　type: 'POST',
-　　　　　　data: {this_date: $('#target_date').data("target-date"),
-　　　　           name: $('#genre_name').data("genre-name"),
-　　　　           now_ranking: $('#player1').data("now-ranking")}
+　　　　　　url: "/ranks/next",
+　　　　　　type: "POST",
+　　　　　　data: {target_date: $("#target_date").data("target-date"),
+　　　　           genre_name: $("#genre_name").data("genre-name"),
+　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　});
 　　// Prevボタン押下時に、前曲の情報を取得する
-　　$('#prev_button, #prev_button_list').click(function(){
+　　$("#prev_button, #prev_button_list").click(function(){
 　　　　$.ajax({
-　　　　　　url: '/ranks/prev',
-　　　　　　type: 'POST',
-　　　　　　data: {this_date: $('#target_date').data("target-date"),
-　　　　           name: $('#genre_name').data("genre-name"),
-　　　　           now_ranking: $('#player1').data("now-ranking")}
+　　　　　　url: "/ranks/prev",
+　　　　　　type: "POST",
+　　　　　　data: {target_date: $("#target_date").data("target-date"),
+　　　　           genre_name: $("#genre_name").data("genre-name"),
+　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　});
 };
@@ -120,21 +120,21 @@ function onPlayerStateChange(event) {
 　　// 再生終了したとき、次曲を呼び出す
 　　if(state == YT.PlayerState.ENDED) {
 　　　　$.ajax({
-　　　　　　url: '/ranks/next',
-　　　　　　type: 'POST',
-　　　　　　data: {this_date: $('#target_date').data("target-date"),
-　　　　           name: $('#genre_name').data("genre-name"),
-　　　　           now_ranking: $('#player1').data("now-ranking")}
+　　　　　　url: "/ranks/next",
+　　　　　　type: "POST",
+　　　　　　data: {target_date: $("#target_date").data("target-date"),
+　　　　           genre_name: $("#genre_name").data("genre-name"),
+　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　};
 　　// 再生中のとき、Play/Pauseボタンの表示を切り替える
 　　if(state == YT.PlayerState.PLAYING) {
-　　document.getElementById("play_button").innerHTML="［ PAUSE ■ ］";
+　　document.getElementById("play_button").innerHTML="PAUSE ■";
 　　document.getElementById("play_button_list").innerHTML="■";
 　　document.getElementById("play_button_list").className="play";
 　　};
 　　if(state == YT.PlayerState.PAUSED) {
-　　document.getElementById("play_button").innerHTML="［ PLAY ▶ ］";
+　　document.getElementById("play_button").innerHTML="PLAY ▶";
 　　document.getElementById("play_button_list").innerHTML="▶";
 　　document.getElementById("play_button_list").className="pause";
 　　};
