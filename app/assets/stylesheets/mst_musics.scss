@@ -2,28 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#edit-title {  
-    margin-top: 10px;
-    margin-bottom: 40px;
+#edit_title {  
+    float: left;
+}
+
+div#sub_title {
+    clear: both;
+    float: left;
+    display:inline;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+div#target_mv {
+    float: left;
+    display:inline;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 23px;
+}
+
+#back_button {
+    width: 50px;
+    border-radius:5px;
+    padding:8px;
+    background:#EB2142;
+    color:#ffffff;
+    text-align:center;
+    text-decoration:none;
+    border: none;
+    margin-left: 10px;
+    font-size: 14px;
     cursor:pointer;
 }
 
-div#sub-title {
-    display:inline;
-    font-size: 22px;
-}
-
-div#update-form {
+div#update_form {
     height: 20px;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-div#target-mv {
-    display:inline;
-    font-size: 16px;
-    margin-left: 20px;
 }
 
 table#edit_table {
@@ -34,7 +51,7 @@ table#edit_table {
     color: #666666;
 }
 
-#update-button {
+#update_button {
     width: 260px;
     border-radius:5px;
     padding:10px;
@@ -43,6 +60,7 @@ table#edit_table {
     text-align:center;
     text-decoration:none;
     border: none;
+    cursor:pointer;
 }
 
 #confirm_button {
@@ -54,4 +72,5 @@ table#edit_table {
     text-align:center;
     text-decoration:none;
     border: none;
+    cursor:pointer;
 }

@@ -1,8 +1,8 @@
-<div class="page-header">
-	<div id='title'>
+<div class="page_header">
+	<div id="title">
 		<h1>Hits Stream</h1>
 	</div>
-	<div id='description' class='tooltip'>
+	<div id="description" class="tooltip">
 		<p>
 			Hits Streamとは？
 		</p>
@@ -10,36 +10,36 @@
 			iTunesの楽曲ランキングに応じたYouTube動画を<br>自動再生する無料BGMサイトです
 		</span>
 	</div>
-	<div id='date_label'>
+	<div id="date_label">
 		Aggregate Date
 	</div>
-	<div id='genre_label'>
+	<div id="genre_label">
 		Genre
 	</div>
-	<div id='select_form'>
-		<%= form_tag('/ranks/result', :remote => true, :method => 'post' ) do %>
-		<%= select_tag(:this_date, options_from_collection_for_select(@mst_dates.order("id DESC"), :this_date, :this_date, @target_date), :id => 'select_tag' )%>
-		<%= select_tag(:name, options_from_collection_for_select(@mst_genres.order("id"), :name, :name, @genre_name), :id => 'select_tag')%>
-		<%= hidden_field_tag(:now_ranking, @running_ranking, :id => 'now_ranking') %>
-		<%= submit_tag("Select", :id => 'submit_tag') %>
+	<div id="select_form">
+		<%= form_tag("/ranks/result", :remote => true, :method => "post" ) do %>
+		<%= select_tag(:target_date, options_from_collection_for_select(@mst_dates.order("id DESC"), :this_date, :this_date, @target_date), :id => "select_tag" )%>
+		<%= select_tag(:genre_name, options_from_collection_for_select(@mst_genres.order("id"), :name, :name, @genre_name), :id => "select_tag")%>
+		<%= hidden_field_tag(:running_ranking, @running_ranking, :id => "running_ranking") %>
+		<%= submit_tag("Select", :id => "submit_tag") %>
 		<% end %>
 	</div>
 </div>
 
-<div id='middle'>
-	<%= render partial: 'list', locals: {contents: @view_rankings, running_ranking: @running_ranking} %>
+<div id="middle">
+	<%= render partial: "list", locals: {contents: @view_rankings, running_ranking: @running_ranking} %>
 </div>
 
-<div class="page-footer">
-	<label id='prev_button' class='footer-button'>［ ← PREV ］</label>
-	<label id='play_button' class='footer-button'>［ PLAY ▶ ］</label>
-	<label id='next_button' class='footer-button'>［ NEXT → ］</label>
+<div class="page_footer">
+	<span id="prev_button" class="footer_button">← PREV</span>
+	<span id="play_button" class="footer_button">PLAY ▶</span>
+	<span id="next_button" class="footer_button">NEXT →</span>
 </div>
 
 <%= javascript_tag do %>
   $(document).ready(function(){
-    $('#title').click(function(){
-      location.href = '/'
+    $("#title").click(function(){
+      location.href = "/"
     });
   });
 <% end %>

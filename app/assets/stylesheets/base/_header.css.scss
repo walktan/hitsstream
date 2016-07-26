@@ -1,4 +1,4 @@
-div.page-header { 
+div.page_header { 
   position: fixed !important; 
   position: absolute; 
   top: 0; 
@@ -28,7 +28,7 @@ div#description p {
   cursor:pointer;
 }
 
-div.page-header h1 {  
+div.page_header h1 {  
   margin-top: 10px;
   margin-bottom: 20px;
   cursor:pointer;
@@ -140,7 +140,7 @@ div.tooltip span:before {
 
 /* スマートフォン対応 */
 @media only screen and (max-width: 980px) {
-  div.page-header { 
+  div.page_header { 
     position: fixed !important; 
     position: absolute; 
     top: 0; 
@@ -152,7 +152,7 @@ div.tooltip span:before {
     padding-left: 10px;
   }
 
-  div.page-header h1 {  
+  div.page_header h1 {  
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 72px;

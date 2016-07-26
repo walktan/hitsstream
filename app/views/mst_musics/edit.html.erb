@@ -1,24 +1,35 @@
-<div class="page-header">
-  <div id="edit-title">
+<div class="page_header">
+  <div id="edit_title">
     <h1>Hits Stream</h1>
   </div>
-  <div id='sub-title'>
+  <div id="description" class="tooltip">
+    <p>
+      Edit 画面の使い方
+    </p>
+    <span>
+      ①YouTube公式サイトから動画のURIを検索する<br>
+      ②URI末尾のIDを以下の"更新後URI"に設定する<br>
+      ③"MVの内容を確認する"ボタンを押下する<br>
+      ④内容に問題がなければ、更新ボタンを押下する<br>
+    </span>
+  </div>
+  <div id="sub_title">
     Edit URI
   </div>
-  <div id='target-mv'><%= @mst_music.artist %> / <%= @mst_music.title %></div>
+  <div id="target_mv"><%= @mst_music.artist %> / <%= @mst_music.title %></div>
 </div>
 
-<div id='middle'>
-  <%= render partial: 'edit_table', locals: {contents: @mst_music} %>
+<div id="middle">
+  <%= render partial: "edit_table", locals: {contents: @mst_music} %>
 </div>
 
-<div class="page-footer">
+<div class="page_footer">
 </div>
 
 <%= javascript_tag do %>
   $(document).ready(function(){
-    $('#edit-title').click(function(){
-     location.href = '/'
+    $("#edit_title").click(function(){
+     location.href = "/"
   });
 });
 <% end %>
