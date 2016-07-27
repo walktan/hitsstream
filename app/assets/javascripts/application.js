@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
+// require turbolinks
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree ../../../vendor/assets/stylesheets/.
 //= require_tree .

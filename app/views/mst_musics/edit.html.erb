@@ -1,6 +1,6 @@
 <div class="page_header">
-  <div id="edit_title">
-    <h1>Hits Stream</h1>
+  <div id="title">
+    <%= link_to "Hits Stream",root_path %>
   </div>
   <div id="description" class="tooltip">
     <p>
@@ -25,11 +25,3 @@
 
 <div class="page_footer">
 </div>
-
-<%= javascript_tag do %>
-  $(document).ready(function(){
-    $("#edit_title").click(function(){
-     location.href = "/"
-  });
-});
-<% end %>

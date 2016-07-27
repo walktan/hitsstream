@@ -1,6 +1,6 @@
 <div class="page_header">
 	<div id="title">
-		<h1>Hits Stream</h1>
+		<%= link_to "Hits Stream",root_path %>
 	</div>
 	<div id="description" class="tooltip">
 		<p>
@@ -35,11 +35,3 @@
 	<span id="play_button" class="footer_button">PLAY ▶</span>
 	<span id="next_button" class="footer_button">NEXT →</span>
 </div>
-
-<%= javascript_tag do %>
-  $(document).ready(function(){
-    $("#title").click(function(){
-      location.href = "/"
-    });
-  });
-<% end %>
