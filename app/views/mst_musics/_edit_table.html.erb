@@ -1,4 +1,6 @@
-<p id="back_button">戻る</p>
+<div id="back_button">
+  <%= link_to "戻る",root_path %>
+</div>
 <div id="update_form">
   <%= form_for @mst_music do |f| %>
   <% if @new_url != "" %>
@@ -41,14 +43,3 @@
     </tbody>
   </table>
   <% end %>
-
-<%= javascript_tag do %>
-  $(document).ready(function(){
-    $("#edit_title").click(function(){
-     location.href = "/"
-  });
-  $("#back_button").click(function() {
-    history.back()
-  });
-});
-<% end %>

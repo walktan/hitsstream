@@ -12,6 +12,8 @@ div.page_header {
 
 div#title {
   float: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 div#description {
@@ -28,10 +30,15 @@ div#description p {
   cursor:pointer;
 }
 
-div.page_header h1 {  
-  margin-top: 10px;
-  margin-bottom: 20px;
-  cursor:pointer;
+div.page_header a {  
+  color:#ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+div.page_header a:hover{
+  color:#ffffff;
 }
 
 div#date_label {
