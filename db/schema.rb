@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710100308) do
+ActiveRecord::Schema.define(version: 20160731143906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20160710100308) do
   add_foreign_key "ranks", "mst_genres"
   add_foreign_key "ranks", "mst_musics"
 
-  create_view :view_rankings,  sql_definition: <<-SQL
+  create_view :rankings,  sql_definition: <<-SQL
       SELECT md.this_date AS target_date,
       mg.name AS genre_name,
       r.rank AS ranking,
