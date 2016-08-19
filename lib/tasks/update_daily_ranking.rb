@@ -7,14 +7,14 @@ API_KEY = Rails.application.secrets.youtube_api_key
 ARI_DOMAIN = 'www.googleapis.com'
 API_SSL_PORT = 443
 
-class Tasks::UpdateItunesRanking
+class Tasks::UpdateDailyRanking
 	def self.execute
 
 		# 日付マスタの更新
-		update_mstdate()
+		update_aggregate_dates()
 
 		# iTunes RSSへ接続
-		MstGenre.pluck(:itunes_url, :id) .each do |value|
+		Itune.pluck(:itunes_url, :itune_id) .each do |value|
 			# RSSをパースする
 			begin
 				rss = RSS::Parser.parse(value[0], true)
@@ -30,17 +30,17 @@ class Tasks::UpdateItunesRanking
 				artist = titile_artist.gsub(/^.*-\s/,"")
 				title = titile_artist.gsub(/\s-.*$/,"")
 				# 曲マスタの更新
-				update_mstmusic(artist, title)
+				update_youtubes(artist, title)
 				# ランキングテーブルの更新
-				rank = Rank.new
+				rank = DailyRanking.new
 				rank.rank = ranking +=1
-				rank.mst_date_id = MstDate.maximum('id')
-				rank.mst_genre_id = value[1]
+				rank.aggregate_date_id = AggregateDate.maximum('aggregate_date_id')
+				rank.itune_id = value[1]
 				begin
-					result = MstMusic.where(artist: artist, title: title).pluck(:id)
-					rank.mst_music_id = result[0]
+					result = Youtube.where(artist: artist, title: title).pluck(:youtube_id)
+					rank.youtube_id = result[0]
 				rescue NoMethodError
-					rank.mst_music_id = nil
+					rank.youtube_id = nil
 				end
 				rank.save
 			end
@@ -48,18 +48,18 @@ class Tasks::UpdateItunesRanking
 	end
 
     # 日付マスタの更新
-	def self.update_mstdate()
-		day = MstDate.new
+	def self.update_aggregate_dates()
+		day = AggregateDate.new
 		today = Date.today
 		day.this_date = today
 		day.save
 	end
 
 	# 曲マスタの更新
-	def self.update_mstmusic(artist, title)
+	def self.update_youtubes(artist, title)
 		# 曲マスタに存在しない場合、新規登録
-		if MstMusic.find_by(artist: artist, title: title) == nil
-			music = MstMusic.new
+		if Youtube.find_by(artist: artist, title: title) == nil
+			music = Youtube.new
 			music.artist = artist
 			music.title = title
 			music.youtube_url = get_youtube_uri(artist, title)
