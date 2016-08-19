@@ -1,3 +1,4 @@
+# controller
 class DailyRankingsController < ApplicationController
   def index
     max_date_id = AggregateDate.maximum(:aggregate_date_id)
@@ -17,21 +18,24 @@ class DailyRankingsController < ApplicationController
   end
 
   def result
-    @view_rankings = DailyRanking.ranking(params[:target_date_id], params[:itune_id])
+    @view_rankings = DailyRanking.ranking(params[:target_date_id],
+                                          params[:itune_id])
     @list_dates = AggregateDate.select(:aggregate_date_id, :this_date)
     @list_genres = Itune.select(:itune_id, :genre)
     @running_ranking = 1
   end
 
   def next
-    @view_rankings = DailyRanking.ranking(params[:target_date_id], params[:itune_id])
+    @view_rankings = DailyRanking.ranking(params[:target_date_id],
+                                          params[:itune_id])
     @list_dates = AggregateDate.select(:aggregate_date_id, :this_date)
     @list_genres = Itune.select(:itune_id, :genre)
     @running_ranking = DailyRanking.next_ranking(params[:running_ranking])
   end
 
   def prev
-    @view_rankings = DailyRanking.ranking(params[:target_date_id], params[:itune_id])
+    @view_rankings = DailyRanking.ranking(params[:target_date_id],
+                                          params[:itune_id])
     @list_dates = AggregateDate.select(:aggregate_date_id, :this_date)
     @list_genres = Itune.select(:itune_id, :genre)
     @running_ranking = DailyRanking.prev_ranking(params[:running_ranking])

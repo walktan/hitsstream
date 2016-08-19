@@ -1,2 +1,3 @@
+# helper
 module DailyRankingsHelper
 end

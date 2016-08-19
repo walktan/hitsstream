@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-    resources :daily_rankings
-    resources :youtubes
+  resources :daily_rankings
+  resources :youtubes
 
-    post '/daily_rankings/result'
-    post '/daily_rankings/next'
-    post '/daily_rankings/prev'
-    post '/youtubes/confirm'
-    root 'daily_rankings#index'
+  post '/daily_rankings/result'
+  post '/daily_rankings/next'
+  post '/daily_rankings/prev'
+  post '/youtubes/confirm'
+  root 'daily_rankings#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
