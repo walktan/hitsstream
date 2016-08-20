@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819080131) do
+ActiveRecord::Schema.define(version: 20_160_819_080_131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
-  create_table 'aggregate_dates', primary_key: 'aggregate_date_id', force: :cascade do |t|
+  create_table 'aggregate_dates', primary_key: 'aggregate_date_id' \
+                                , force: :cascade do |t|
     t.date     'this_date'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
-  create_table 'daily_rankings', primary_key: 'daily_ranking_id', force: :cascade do |t|
+  create_table 'daily_rankings', primary_key: 'daily_ranking_id' \
+                               ,force: :cascade do |t|
     t.integer  'rank'
     t.integer  'aggregate_date_id'
     t.integer  'itune_id'
@@ -31,9 +33,15 @@ ActiveRecord::Schema.define(version: 20160819080131) do
     t.datetime 'updated_at',        null: false
   end
 
-  add_index 'daily_rankings', ['aggregate_date_id'], name: 'index_daily_rankings_on_aggregate_date_id', using: :btree
-  add_index 'daily_rankings', ['itune_id'], name: 'index_daily_rankings_on_itune_id', using: :btree
-  add_index 'daily_rankings', ['youtube_id'], name: 'index_daily_rankings_on_youtube_id', using: :btree
+  add_index 'daily_rankings', ['aggregate_date_id'] \
+                            , name: 'index_daily_rankings_on_aggregate_date_id' \
+                            , using: :btree
+  add_index 'daily_rankings', ['itune_id'] \
+                            , name: 'index_daily_rankings_on_itune_id' \
+                            , using: :btree
+  add_index 'daily_rankings', ['youtube_id'] \
+                            , name: 'index_daily_rankings_on_youtube_id' \
+                            , using: :btree
 
   create_table 'itunes', primary_key: 'itune_id', force: :cascade do |t|
     t.string   'genre'
@@ -50,10 +58,10 @@ ActiveRecord::Schema.define(version: 20160819080131) do
     t.datetime 'updated_at',  null: false
   end
 
-  add_foreign_key 'daily_rankings', 'aggregate_dates', primary_key: 'aggregate_date_id'
+  add_foreign_key 'daily_rankings', 'aggregate_dates' \
+                                  , primary_key: 'aggregate_date_id'
   add_foreign_key 'daily_rankings', 'itunes', primary_key: 'itune_id'
   add_foreign_key 'daily_rankings', 'youtubes', primary_key: 'youtube_id'
-
   create_view :view_rankings,  sql_definition: <<-SQL
       SELECT md.this_date AS target_date,
       mg.genre AS genre_name,
@@ -65,7 +73,9 @@ ActiveRecord::Schema.define(version: 20160819080131) do
       aggregate_dates md,
       itunes mg,
       youtubes mm
-    WHERE ((r.aggregate_date_id = md.aggregate_date_id) AND (r.itune_id = mg.itune_id) AND (r.youtube_id = mm.youtube_id));
+    WHERE ((r.aggregate_date_id = md.aggregate_date_id)
+      AND (r.itune_id = mg.itune_id)
+      AND (r.youtube_id = mm.youtube_id));
   SQL
 
 end
