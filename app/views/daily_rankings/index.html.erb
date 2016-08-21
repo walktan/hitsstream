@@ -20,7 +20,6 @@
 		<%= form_tag("/daily_rankings/result", :remote => true, :method => "post" ) do %>
 		<%= select_tag(:target_date_id, options_from_collection_for_select(@list_dates.order("aggregate_date_id DESC"), :aggregate_date_id, :this_date, @target_date_id), :id => "select_tag" )%>
 		<%= select_tag(:itune_id, options_from_collection_for_select(@list_genres.order("itune_id"), :itune_id, :genre, @genre), :id => "select_tag")%>
-		<%= hidden_field_tag(:running_ranking, @running_ranking, :id => "running_ranking") %>
 		<%= submit_tag("Select", :id => "submit_tag") %>
 		<% end %>
 	</div>
