@@ -23,6 +23,9 @@ class DailyRankingsController < ApplicationController
     @list_dates = AggregateDate.select(:aggregate_date_id, :this_date)
     @list_genres = Itune.select(:itune_id, :genre)
     @running_ranking = 1
+    if !params[:running_ranking].nil?
+      @running_ranking = params[:running_ranking].to_i
+    end
   end
 
   def next

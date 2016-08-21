@@ -111,6 +111,16 @@ function onPlayerReady(event) {
 　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　});
+   //サムネイル押下時に、押下した曲の情報を取得する
+　　$(".thumbnail").click(function(){
+　　　　$.ajax({
+　　　　　　url: "/daily_rankings/result",
+　　　　　　type: "POST",
+　　　　　　data: {target_date_id: $("#target_date").data("target-date-id"),
+　　　　           itune_id: $("#itune").data("itune-id"),
+　　　　           running_ranking: $(this).data("ranking")}
+　　　　});
+　　});
 };
 
 // プレーヤーの状態が変更されたとき
