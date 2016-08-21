@@ -1,25 +1,25 @@
 <table id="mv_table">
   <tbody>
     <% contents.each do |rank| %>
-    <% if running_ranking == rank.ranking then %>
+    <% if running_ranking == rank.rank then %>
     <% running_flg = "running" %>
     <% else%>
     <% running_flg = "no_running" %>
     <% end%>
     <tr>
       <td>
-        <% if running_ranking == rank.ranking then %>
+        <% if running_ranking == rank.rank then %>
         <label id="prev_button_list", class="list_button">↑</label>
         <label id="play_button_list", class="list_button">▶</label>
         <label id="next_button_list", class="list_button">↓</label>
         <% end %>
       </td>
-      <td id="target_date" data-target-date="<%= rank.target_date_id %>" >
+      <td id="target_date" data-target-date-id="<%= rank.aggregate_date_id %>" >
       </td>
-      <td id="genre_name" data-genre-name="<%= rank.genre_id %>" >
+      <td id="itune" data-itune-id="<%= rank.itune_id %>" >
       </td>
       <td id="<%= running_flg %>">
-        <p><%= rank.ranking %></p>
+        <p><%= rank.rank %></p>
         <p><%= rank.artist %></p>
         <p><%= rank.title %></p>
       </td>
@@ -28,7 +28,7 @@
         <p id="no_video_alert">VideoID未設定</p>
         <% rank.youtube_url = "WMR0NjbsMf4" %>
         <% end%>
-        <% if running_ranking == rank.ranking then %>
+        <% if running_ranking == rank.rank then %>
         <div id="player" data-video-id="<%= rank.youtube_url %>" data-running-ranking="<%= running_ranking %>">
         </div>
         <% else %>
@@ -36,7 +36,7 @@
         <% end %>
       </td>
       <td>
-        <p id="edit_p"><%= link_to "[Edit]", edit_mst_music_path(rank.mst_music_id, {:target_date => rank.target_date, :genre_name => rank.genre_name, :running_ranking => rank.ranking}), :id => "edit_link" %></p>
+        <p id="edit_p"><%= link_to "[Edit]", edit_youtube_path(rank.youtube_id, {:target_date_id => rank.this_date, :itune_id => rank.itune_id, :running_ranking => rank.rank}), :id => "edit_link" %></p>
       </td>
     </tr>
   </div>
