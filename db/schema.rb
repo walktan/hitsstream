@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20_160_819_080_131) do
   end
 
   create_table 'daily_rankings', primary_key: 'daily_ranking_id' \
-                               ,force: :cascade do |t|
+                               , force: :cascade do |t|
     t.integer  'rank'
     t.integer  'aggregate_date_id'
     t.integer  'itune_id'
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20_160_819_080_131) do
                                   , primary_key: 'aggregate_date_id'
   add_foreign_key 'daily_rankings', 'itunes', primary_key: 'itune_id'
   add_foreign_key 'daily_rankings', 'youtubes', primary_key: 'youtube_id'
-  create_view :view_rankings,  sql_definition: <<-SQL
+  create_view :view_rankings, sql_definition: <<-SQL
       SELECT md.this_date AS target_date,
       mg.genre AS genre_name,
       r.rank AS ranking,

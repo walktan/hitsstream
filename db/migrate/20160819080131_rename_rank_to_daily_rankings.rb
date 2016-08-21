@@ -1,3 +1,4 @@
+# Rename model
 class RenameRankToDailyRankings < ActiveRecord::Migration
   def change
     rename_column :ranks, :id, :daily_ranking_id
