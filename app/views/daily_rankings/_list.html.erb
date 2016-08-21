@@ -32,7 +32,8 @@
         <div id="player" data-video-id="<%= rank.youtube_url %>" data-running-ranking="<%= running_ranking %>">
         </div>
         <% else %>
-        <iframe width="320" height="180" src=<%= "http://i.ytimg.com/vi/" + rank.youtube_url + "/mqdefault.jpg" %> frameborder="0" allowfullscreen></iframe>
+          <img class="thumbnail" data-ranking="<%= rank.rank %>" width="320" height="180"
+               src=<%= "http://i.ytimg.com/vi/" + rank.youtube_url + "/mqdefault.jpg" %>
         <% end %>
       </td>
       <td>
