@@ -2,5 +2,38 @@ $(function(){
 　　$("#middle").html("<%= j(render(:partial => "list", :locals => {:contents => @view_rankings, running_ranking: @running_ranking})) %>");
 　　$("#running_ranking").val(<%= @running_ranking %>);
 　　onYouTubeIframeAPIReady();
-　　window.scrollTo( 0, 0 );
+　　var position = 0
+　　switch (<%= @running_ranking %>) {
+　　　　case 1:
+　　　　　　position = 0;
+　　　　　　break;
+　　　　case 2:
+　　　　　　position = 100;
+　　　　　　break;
+　　　　case 3:
+　　　　　　position = 300;
+　　　　　　break;
+　　　　case 4:
+　　　　　　position = 495;
+　　　　　　break;
+　　　　case 5:
+　　　　　　position = 695;
+　　　　　　break;
+　　　　case 6:
+　　　　　　position = 890;
+　　　　　　break;
+　　　　case 7:
+　　　　　　position = 1090;
+　　　　　　break;
+　　　　case 8:
+　　　　　　position = 1285;
+　　　　　　break;
+　　　　case 9:
+　　　　　　position = 1485;
+　　　　　　break;
+　　　　case 10:
+　　　　　　position = 1700;
+　　　　　　break;
+　　}
+　　window.scrollTo( 0, position );
 });
