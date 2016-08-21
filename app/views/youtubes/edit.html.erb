@@ -16,11 +16,11 @@
   <div id="sub_title">
     Edit URI
   </div>
-  <div id="target_mv"><%= @mst_music.artist %> / <%= @mst_music.title %></div>
+  <div id="target_mv"><%= @youtube.artist %> / <%= @youtube.title %></div>
 </div>
 
 <div id="middle">
-  <%= render partial: "edit_table", locals: {contents: @mst_music} %>
+  <%= render partial: "edit_table", locals: {contents: @youtube} %>
 </div>
 
 <div class="page_footer">
