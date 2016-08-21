@@ -94,20 +94,20 @@ function onPlayerReady(event) {
 　　// Nextボタン押下時に、次曲の情報を取得する
 　　$("#next_button, #next_button_list").click(function(){
 　　　　$.ajax({
-　　　　　　url: "/ranks/next",
+　　　　　　url: "/daily_rankings/next",
 　　　　　　type: "POST",
-　　　　　　data: {target_date: $("#target_date").data("target-date"),
-　　　　           genre_name: $("#genre_name").data("genre-name"),
+　　　　　　data: {target_date_id: $("#target_date").data("target-date-id"),
+　　　　           itune_id: $("#itune").data("itune-id"),
 　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　});
 　　// Prevボタン押下時に、前曲の情報を取得する
 　　$("#prev_button, #prev_button_list").click(function(){
 　　　　$.ajax({
-　　　　　　url: "/ranks/prev",
+　　　　　　url: "/daily_rankings/prev",
 　　　　　　type: "POST",
-　　　　　　data: {target_date: $("#target_date").data("target-date"),
-　　　　           genre_name: $("#genre_name").data("genre-name"),
+　　　　　　data: {target_date_id: $("#target_date").data("target-date-id"),
+　　　　           itune_id: $("#itune").data("itune-id"),
 　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　});
@@ -120,10 +120,10 @@ function onPlayerStateChange(event) {
 　　// 再生終了したとき、次曲を呼び出す
 　　if(state == YT.PlayerState.ENDED) {
 　　　　$.ajax({
-　　　　　　url: "/ranks/next",
+　　　　　　url: "/daily_rankings/next",
 　　　　　　type: "POST",
-　　　　　　data: {target_date: $("#target_date").data("target-date"),
-　　　　           genre_name: $("#genre_name").data("genre-name"),
+　　　　　　data: {target_date_id: $("#target_date").data("target-date-id"),
+　　　　           itune_id: $("#itune").data("itune-id"),
 　　　　           running_ranking: $("#player").data("running-ranking")}
 　　　　});
 　　};
