@@ -2,7 +2,7 @@
 class YoutubesController < ApplicationController
   def edit
     @youtube = Youtube.find(params[:id])
-    @new_url = ""
+    @new_url = ''
     flash[:target_date_id] = params[:target_date_id]
     flash[:itune_id] = params[:itune_id]
     flash[:running_ranking] = params[:running_ranking]
@@ -24,7 +24,7 @@ class YoutubesController < ApplicationController
     if @youtube.update(youtube_params)
       redirect_to root_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 

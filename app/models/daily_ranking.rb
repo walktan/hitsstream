@@ -8,10 +8,10 @@ class DailyRanking < ActiveRecord::Base
   RANK_MIN = 1
 
   def self.ranking(aggregate_date_id, itune_id)
-    DailyRanking.joins(:aggregate_date, :itune, :youtube). \
-      select("daily_rankings.*, aggregate_dates.*, itunes.*, youtubes.*"). \
-      where(aggregate_date_id: aggregate_date_id, itune_id: itune_id). \
-      order("rank")
+    DailyRanking.joins(:aggregate_date, :itune, :youtube) \
+                .select('daily_rankings.*, aggregate_dates.*, itunes.*, youtubes.*') \
+                .where(aggregate_date_id: aggregate_date_id, itune_id: itune_id) \
+                .order('rank')
   end
 
   def self.next_ranking(now_ranking)
