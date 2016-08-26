@@ -3,6 +3,11 @@ class DailyRanking < ActiveRecord::Base
   belongs_to :aggregate_date
   belongs_to :itune
   belongs_to :youtube
+  validates  :aggregate_date_id , presence: true
+  validates  :itune_id          , presence: true
+  validates  :youtube_id        , presence: true
+  validates  :rank              , presence: true \
+                                , inclusion: { in: 1..10 }
 
   RANK_MAX = 10
   RANK_MIN = 1
